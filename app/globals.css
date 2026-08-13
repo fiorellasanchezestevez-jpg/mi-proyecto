@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
   box-sizing: border-box;
 }
@@ -113,6 +115,135 @@ footer {
   text-align: center;
 }
 
+.servicios {
+  width: min(900px, 100%);
+  margin: 60px auto 0;
+}
+
+.encabezadoServicios {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.encabezadoServicios h2 {
+  margin: 0;
+  color: #17324d;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.listaServicios {
+  display: grid;
+  gap: 16px;
+}
+
+.servicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px;
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(91, 177, 210, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(44, 126, 159, 0.12);
+}
+
+.servicio h3 {
+  margin: 0 0 8px;
+  color: #17324d;
+  font-size: 21px;
+}
+
+.servicio p {
+  margin: 0;
+  color: #55798a;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.servicio strong {
+  flex: 0 0 auto;
+  color: #25647f;
+  font-size: 19px;
+}
+
+.enlaceServicio,
+.volver {
+  flex: 0 0 auto;
+  color: #ffffff;
+  background-color: #25647f;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.paginaDetalle {
+  display: grid;
+  place-items: center;
+}
+
+.detalleServicio {
+  width: min(820px, 100%);
+}
+
+.detalleServicio h1 {
+  margin: 0;
+  color: #17324d;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1;
+}
+
+.panelDetalle {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  margin-top: 34px;
+  padding: 28px;
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(91, 177, 210, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(44, 126, 159, 0.12);
+}
+
+.panelDetalle h2 {
+  margin: 0 0 12px;
+  color: #17324d;
+}
+
+.panelDetalle p {
+  margin: 0;
+  color: #55798a;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.precioDetalle {
+  min-width: 150px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(91, 177, 210, 0.35);
+}
+
+.precioDetalle span {
+  display: block;
+  margin-bottom: 8px;
+  color: #55798a;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.precioDetalle strong {
+  color: #25647f;
+  font-size: 28px;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 24px;
+}
+
 @media (max-width: 750px) {
   .pagina {
     padding: 50px 16px 25px;
@@ -120,5 +251,22 @@ footer {
 
   .presentacion h1 {
     letter-spacing: -2px;
+  }
+
+  .servicio {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .panelDetalle {
+    grid-template-columns: 1fr;
+  }
+
+  .precioDetalle {
+    padding-left: 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(91, 177, 210, 0.35);
+    border-left: 0;
   }
 }
