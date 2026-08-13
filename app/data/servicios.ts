@@ -10,9 +10,9 @@ export const servicios: Servicio[] = [
   {
     id: 1,
     nombre: "Soft gel",
-    descripcion: "Extension de unas.",
+    descripcion: "Extension de uñas.",
     detalle:
-      "Ideal si quieres unas mas largas, prolijas y resistentes. Se trabaja con tips soft gel y acabado personalizado segun tu estilo.",
+      "Ideal si quieres uñas mas largas, prolijas y resistentes. Se trabaja con tips soft gel y acabado personalizado segun tu estilo.",
     precio: "$18.000",
   },
   {
