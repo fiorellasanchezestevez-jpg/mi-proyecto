@@ -3,8 +3,7 @@ import { supabase } from "@/lib/supabase";
 export async function GET() {
   const { data, error } = await supabase
     .from("Servicios")
-    .select("*")
-    .order("id", { ascending: true });
+    .select("*");
 
   if (error) {
     return Response.json(
@@ -19,5 +18,14 @@ export async function GET() {
     );
   }
 
-  return Response.json(data);
+  const servicios = data.map((item) => ({
+    id: item.id,
+    nombre: item.servicio,
+    descripcion: item.descripcion,
+    detalle: item.descripcion,
+    precio: `$${item.precio}`,
+    duracion: item["duracion en minutos"],
+  }));
+
+  return Response.json(servicios);
 }

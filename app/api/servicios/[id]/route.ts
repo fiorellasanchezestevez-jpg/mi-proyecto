@@ -9,7 +9,7 @@ export async function GET(
   const { data, error } = await supabase
     .from("Servicios")
     .select("*")
-    .eq("id", Number(id))
+    .eq("id", id)
     .single();
 
   if (error || !data) {
@@ -19,5 +19,14 @@ export async function GET(
     );
   }
 
-  return Response.json(data);
+  const servicio = {
+    id: data.id,
+    nombre: data.servicio,
+    descripcion: data.descripcion,
+    detalle: data.descripcion,
+    precio: `$${data.precio}`,
+    duracion: data["duracion en minutos"],
+  };
+
+  return Response.json(servicio);
 }
