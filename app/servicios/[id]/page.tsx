@@ -25,12 +25,14 @@ export default function ServicioDetallePage() {
         setCargando(false);
         return;
       }
+const datos = await respuesta.json();
 
-      const datos = (await respuesta.json()) as Servicio;
-
-      setServicio(datos);
-      setCargando(false);
-    }
+if (Array.isArray(datos)) {
+  setServicios(datos);
+} else {
+  console.error("La API no devolvió una lista:", datos);
+  setServicios([]);
+}
 
     cargarServicio();
   }, [params.id]);
