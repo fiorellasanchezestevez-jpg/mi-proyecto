@@ -7,14 +7,17 @@ export async function GET() {
     .order("id", { ascending: true });
 
   if (error) {
-  return Response.json(
-    {
-      mensaje: "No se pudieron cargar los servicios",
-      error: error.message,
-      details: error.details,
-      hint: error.hint,
-      code: error.code,
-    },
-    { status: 500 },
-  );
+    return Response.json(
+      {
+        mensaje: "No se pudieron cargar los servicios",
+        error: error.message,
+        details: error.details,
+        hint: error.hint,
+        code: error.code,
+      },
+      { status: 500 },
+    );
+  }
+
+  return Response.json(data);
 }
