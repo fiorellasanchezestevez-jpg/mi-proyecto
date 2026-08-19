@@ -7,7 +7,7 @@ export async function GET(
   const { id } = await context.params;
 
   const { data, error } = await supabase
-    .from("services")
+    .from("Servicios")
     .select("*")
     .eq("id", Number(id))
     .single();
